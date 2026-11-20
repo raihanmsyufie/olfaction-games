@@ -1,0 +1,139 @@
+/* OLFACTION GAMES design tokens. Every colour, font, radius and shadow in the site comes from here.
+   Light theme follows phone design B, the "Arena" theme follows phone design C (kalibrasi 20 Nov 2026).
+   Palette values are the official OLFACTION colours (Figma file and color_palette.png). */
+
+:root {
+  /* brand palette */
+  --purple-900: #3c205b;
+  --purple-800: #4332bf;
+  --purple-700: #6949b4;
+  --purple-500: #804fa0;
+  --purple-300: #b8b0f1;
+  --purple-200: #d6dcf2;
+  --gold-500: #fdc854;
+  --gold-600: #fcba28;
+  --gold-100: #fee3ae;
+  --red-500: #e81d23;
+  --red-700: #cd2026;
+  --red-100: #fcd9da;
+  --sage-500: #b5d295;
+  --pink-500: #fd79e2;
+  --blue-600: #1a80fd;
+  --coral-500: #f05658;
+  --green-600: #2f8a4c; /* added: right answers and gains (not in the official palette) */
+
+  /* fonts */
+  --f-display: "Luckiest Guy", "Figtree", sans-serif;
+  --f-head: "Roboto Slab", Georgia, serif;
+  --f-body: "Figtree", system-ui, sans-serif;
+  --f-num: "Golos Text", "Figtree", sans-serif;
+
+  /* type scale (rem) */
+  --t-xs: 0.85rem;
+  --t-s: 0.95rem;
+  --t-m: 1.05rem;
+  --t-l: 1.3rem;
+  --t-xl: 1.7rem;
+  --t-2xl: 2.3rem;
+  --t-3xl: 3rem;
+
+  /* space, radius, motion */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 48px;
+  --r: 10px;
+  --r-pill: 999px;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur: 700ms;
+  --tap: 48px;
+
+  /* light theme (default) */
+  --bg: #f8f4fb;
+  --bg2: #ece3f6;
+  --sf: #ffffff;
+  --sf2: #f3edf9;
+  --line: #e2d8ee;
+  --ink: #2a1f3d;
+  --ink-strong: var(--purple-900);
+  --mu: #574b6b;
+  --brand: var(--purple-700);
+  --brand-hover: #5a3c9f;
+  --on-brand: #ffffff;
+  --sticker-fill: var(--purple-800);
+  --sticker-mid: #ffffff;
+  --sticker-out: var(--purple-700);
+  --hl: var(--gold-500);
+  --win: var(--gold-600);
+  --up: var(--green-600);
+  --up-soft: #e3f3e6;
+  --up-ink: #1d5c32;
+  --down: var(--red-700);
+  --down-soft: #fde6e7;
+  --down-ink: #9a171d;
+  --warn-soft: var(--gold-100);
+  --warn-ink: #5c400d;
+  --you: var(--gold-500);
+  --you-soft: #fff4d6;
+  --orn: var(--purple-300);
+  --shadow: 0 1px 2px rgba(42, 31, 61, 0.05), 0 10px 24px rgba(60, 32, 91, 0.08);
+  --shadow-lift: 0 2px 4px rgba(42, 31, 61, 0.08), 0 16px 36px rgba(60, 32, 91, 0.14);
+  --fog: radial-gradient(90% 40% at 0% 0%, var(--bg2), transparent 70%),
+    radial-gradient(80% 30% at 100% 6%, rgba(253, 200, 84, 0.3), transparent 70%),
+    radial-gradient(90% 30% at 70% 100%, rgba(105, 73, 180, 0.1), transparent 70%);
+  color-scheme: light;
+}
+
+:root[data-theme="arena"] {
+  --bg: #24123b;
+  --bg2: #3a2163;
+  --sf: #34205a;
+  --sf2: rgba(255, 255, 255, 0.08);
+  --line: rgba(255, 255, 255, 0.14);
+  --ink: #f6f0fb;
+  --ink-strong: var(--gold-500);
+  --mu: #d9cde8;
+  --brand: var(--gold-600);
+  --brand-hover: #ffcb4f;
+  --on-brand: #24123b;
+  --sticker-fill: var(--purple-800);
+  --sticker-mid: #ffffff;
+  --sticker-out: var(--purple-700);
+  --hl: rgba(253, 200, 84, 0.45);
+  --up: #74d494;
+  --up-soft: rgba(116, 212, 148, 0.16);
+  --up-ink: #a6eabb;
+  --down: #ff8a8d;
+  --down-soft: rgba(255, 138, 141, 0.16);
+  --down-ink: #ffb3b5;
+  --warn-soft: rgba(253, 200, 84, 0.18);
+  --warn-ink: #ffe3a3;
+  --you: var(--gold-500);
+  --you-soft: rgba(253, 200, 84, 0.16);
+  --orn: #6c4fa8;
+  --shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+  --shadow-lift: 0 16px 36px rgba(0, 0, 0, 0.38);
+  --fog: radial-gradient(90% 35% at 50% 0%, rgba(128, 79, 160, 0.55), transparent 70%),
+    radial-gradient(70% 25% at 100% 100%, rgba(252, 186, 40, 0.12), transparent 70%),
+    radial-gradient(70% 25% at 0% 60%, rgba(239, 49, 51, 0.1), transparent 70%);
+  color-scheme: dark;
+}
+
+/* Team colours for the 12 lanes and avatars. Slot 0 is always the player. */
+:root {
+  --team-0: var(--gold-600);
+  --team-1: #6949b4;
+  --team-2: #e2474a;
+  --team-3: #3f8f5b;
+  --team-4: #1a80fd;
+  --team-5: #c2549f;
+  --team-6: #d0731b;
+  --team-7: #2f9aa8;
+  --team-8: #8a5a2b;
+  --team-9: #4332bf;
+  --team-10: #a32356;
+  --team-11: #6b7d1f;
+}
